@@ -43,4 +43,7 @@ public class Imovel {
 	@Column(name = "OBSERVACAO")
 	private String observacao;
 
+	@Column(name = "IS_VENDA")
+	private Boolean isVenda;
+
 }
