@@ -1,6 +1,7 @@
 package com.api.imobiliaria.serviceImpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,26 @@ public class ImovelServiceImpl implements ImovelService {
 	public Imovel salvarImovel(ImovelDto imovelDto) {
 		Imovel imovel = this.modelMapper.map(imovelDto, Imovel.class);
 		return this.imovelRepository.save(imovel);
+	}
+
+	@Override
+	public void deletarImovel(Integer id) {
+		this.imovelRepository.deleteById(id);
+	}
+
+	@Override
+	public void updateImovel(Imovel imovel) {
+		Optional<Imovel> listaImovel = this.imovelRepository.findById(imovel.getId());
+		listaImovel.stream().filter(imo -> imovel.getId() == imo.getId()).forEach(imo -> {
+			imo.setTipoImovel(imovel.getTipoImovel());
+			imo.setDescricao(imovel.getDescricao());
+			imo.setEndereco(imovel.getEndereco());
+			imo.setQtdDormitorio(imovel.getQtdDormitorio());
+			imo.setQtdBanheiro(imovel.getQtdBanheiro());
+			imo.setQtdSuites(imovel.getQtdSuites());
+			imo.setMetrosQuadrados(imovel.getMetrosQuadrados());
+			imo.setObservacao(imovel.getObservacao());
+		});
 	}
 
 }

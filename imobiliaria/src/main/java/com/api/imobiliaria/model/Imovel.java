@@ -24,6 +24,9 @@ public class Imovel {
 	@Column(name = "TIPO_IMOVEL")
 	private String tipoImovel;
 
+	@Column(name = "DESCRICAO")
+	private String descricao;
+
 	@ManyToOne(cascade = { CascadeType.ALL })
 	@JoinColumn(name = "ENDERECO_ID", referencedColumnName = "ID")
 	private Endereco endereco;
@@ -42,8 +45,4 @@ public class Imovel {
 
 	@Column(name = "OBSERVACAO")
 	private String observacao;
-
-	@Column(name = "IS_VENDA")
-	private Boolean isVenda;
-
 }

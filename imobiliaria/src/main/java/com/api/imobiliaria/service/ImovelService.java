@@ -10,4 +10,8 @@ public interface ImovelService {
 	List<Imovel> buscarImoveis();
 
 	Imovel salvarImovel(ImovelDto imovel);
+
+	void deletarImovel(Integer id);
+
+	void updateImovel(Imovel imovel);
 }
