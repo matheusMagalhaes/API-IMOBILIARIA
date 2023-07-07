@@ -13,6 +13,8 @@ public class ImovelDto {
 
 	private String tipoImovel;
 
+	private String descricao;
+
 	private Endereco endereco;
 
 	private Integer qtdDormitorio;
@@ -22,6 +24,8 @@ public class ImovelDto {
 	private Integer qtdSuites;
 
 	private Integer metrosQuadrados;
+
+	private Integer valorAluguel;
 
 	private String observacao;
 

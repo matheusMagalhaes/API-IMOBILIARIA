@@ -43,6 +43,9 @@ public class Imovel {
 	@Column(name = "METROS_QUADRADOS")
 	private Integer metrosQuadrados;
 
+	@Column(name = "VALOR_ALUGUEL")
+	private Integer valorAluguel;
+
 	@Column(name = "OBSERVACAO")
 	private String observacao;
 }
