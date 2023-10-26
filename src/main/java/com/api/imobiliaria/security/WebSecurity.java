@@ -9,6 +9,6 @@ public class WebSecurity implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/api/imovel").allowedOrigins("*").allowedMethods("GET").allowedHeaders("GET");
+        registry.addMapping("/api/**").allowedOrigins("*").allowedMethods("GET").allowedHeaders("*");
     }
 }
