@@ -1,4 +1,4 @@
-package com.api.imobiliaria.serviceImpl;
+package com.api.imobiliaria.service.serviceImpl;
 
 import com.api.imobiliaria.model.TipoImovel;
 import com.api.imobiliaria.repository.TipoImovelRepository;
