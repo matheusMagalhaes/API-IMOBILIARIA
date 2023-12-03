@@ -1,10 +1,10 @@
 package com.api.imobiliaria.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 
@@ -21,6 +21,10 @@ public class ImovelAluguel {
     @Column(name = "IS_RESIDENTIAL")
     @NotNull(message = "IsResidential must not be null")
     private boolean isResidential;
+
+    @JoinColumn(name = "ENDERECO_ID",referencedColumnName="id")
+    @ManyToOne
+    private Endereco endereco;
 
     @JoinColumn(name = "TIPO_IMV", referencedColumnName = "ID")
     @ManyToOne
